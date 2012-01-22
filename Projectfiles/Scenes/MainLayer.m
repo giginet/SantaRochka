@@ -8,6 +8,7 @@
 
 #import "KWMusicManager.h"
 #import "MainLayer.h"
+#import "ResultLayer.h"
 
 @interface MainLayer()
 - (void)onReady;
@@ -25,13 +26,14 @@
     score_ = 0;
     isYes_ = NO;
     isTouched_ = YES;
+    mainLayer_ = [[CCLayer alloc] init];
     for(NSString* bgm in [NSArray arrayWithObjects:@"se1.caf", @"se2.caf", @"se3.caf", nil]){
       [[KWMusicManager sharedManager] preloadEffect:bgm];
     }
     [[KWMusicManager sharedManager] preloadBg:@"afternoon_lesson.caf"];
     CCLayer* bgLayer = [[CCLayer alloc] init];
     KWScrollLayer* background = [KWScrollLayer layerWithFile:@"background.png"];
-    background.velocity = [KWVector vectorWithPoint:CGPointMake(-1, 0)];
+    background.velocity = [KWVector vectorWithPoint:CGPointMake(1, 0)];
     [bgLayer addChild:background];
     
     [self addChild:bgLayer];
@@ -49,12 +51,11 @@
     rochka_.position = CGPointMake(390, 175);
     rud.position = CGPointMake(380, 140);
     bag.position = CGPointMake(405, 145);
-    [self addChild:rud];
-    [self addChild:rochka_];
-    [self addChild:bag];
-    [self onReady];
+    [mainLayer_ addChild:rud];
+    [mainLayer_ addChild:rochka_];
+    [mainLayer_ addChild:bag];
+    [self addChild:mainLayer_];
     [self addChild:frame];
-    //scoreLabel_ = [CCLabelTTF labelWithString:@"0" fontName:@"Marker Felt" fontSize:24];
     scoreLabel_ = [CCLabelTTF labelWithString:@"0" 
                                    dimensions:CGSizeMake(200, 50) 
                                     alignment:UITextAlignmentRight
@@ -70,12 +71,14 @@
 
 - (void)onEnterTransitionDidFinish {
   [[KWMusicManager sharedManager] playBgWithLoop:YES];
+  [self onReady];
 }
 
 - (void)onReady {
   CCSprite* ready = [CCSprite spriteWithFile:@"ready.png"];
   ready.position = CGPointMake(190, 250);
   ready.opacity = 0;
+  [KWMusicManager sharedManager].bgVolume = 0.5;
   CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25], 
                       [CCDelayTime actionWithDuration:2], 
                       [CCFadeOut actionWithDuration:0.25],
@@ -83,13 +86,13 @@
                       nil];
 
   [ready runAction:seq];
-  [self addChild:ready];
+  [mainLayer_ addChild:ready];
   
   CCSprite* stage = [CCSprite spriteWithFile:@"stage1.png"];
   stage.position = CGPointMake(90, 120);
   stage.opacity = 0;
   [stage runAction:[CCFadeIn actionWithDuration:0.25]];
-  [self addChild:stage];
+  [mainLayer_ addChild:stage];
 }
 
 - (void)onGameStart {
@@ -97,6 +100,7 @@
   timer_.looping = YES;
   [timer_ setOnCompleteListener:self selector:@selector(onCount)];
   [timer_ play];
+  [KWMusicManager sharedManager].bgVolume = 1.0;
 }
 
 - (void)onGameOver {
@@ -106,13 +110,23 @@
                                                 delay:0.3];
   float x = rochka_.position.x;
   jed.position = CGPointMake(x, [CCDirector sharedDirector].screenSize.height);
-  [self addChild:jed];
+  [mainLayer_ addChild:jed];
   [[KWMusicManager sharedManager] playEffect:@"se3.caf"];
   [rochka_ runAction:[CCMoveTo actionWithDuration:1.0 position:CGPointMake(x, -100)]];
+  [[[KWMusicManager sharedManager] backgroundTrack] 
+   fadeTo:0 
+   duration:3.0f 
+   target:nil 
+   selector:nil];
   CCSequence* seq = [CCSequence actions:[CCMoveTo actionWithDuration:1.0 position:CGPointMake(x, -100)],
                      [CCDelayTime actionWithDuration:2],
                      [CCCallBlock actionWithBlock:^{
-    NSLog(@"GameOver");
+    ResultLayer* rl = [[ResultLayer alloc] initWithScore:score_];
+    id scene = [[CCScene alloc] init];
+    [scene addChild:rl];
+    CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
+                                                                      scene:scene];
+    [[CCDirector sharedDirector] pushScene:transition];
   }], nil];
   [jed runAction:seq];
 }
@@ -122,7 +136,7 @@
     [self onGameOver];
     return;
   }
-  [self removeChild:balloon_ cleanup:YES];
+  [mainLayer_ removeChild:balloon_ cleanup:YES];
   KWRandom* rnd = [KWRandom random];
   int index = [rnd nextIntWithRange:NSMakeRange(0, 6)];
   isYes_ = index < 3;
@@ -134,7 +148,7 @@
                                    rect:CGRectMake(98 * (index - 3), 0, 98, 87)];
   }
   balloon_.position = CGPointMake(300, 230);
-  [self addChild:balloon_];
+  [mainLayer_ addChild:balloon_];
   [[KWMusicManager sharedManager] playEffect:@"se1.caf"];
   isTouched_ = NO;
 }
@@ -147,6 +161,10 @@
                                                      delay:0.1];
   __block KWTimer* timer = timer_;
   __block MainLayer* layer = self;
+  CCSprite* love = [CCSprite spriteWithFile:@"love.png"];
+  love.position = ccp(balloon_.contentSize.width / 2, 
+                      balloon_.contentSize.height / 2);
+  [balloon_ addChild:love];
   id restart = [CCCallBlockN actionWithBlock:^(CCNode* node){
     CCSprite* present = [CCSprite spriteWithFile:@"present.png"];
     present.position = node.position;

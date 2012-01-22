@@ -58,9 +58,10 @@
 - (void)scrollBackground:(ccTime)dt {
   CGSize screenSize = [[CCDirector sharedDirector] screenSize];
   current_.x = (int)((current_.x - velocity_.x)) % (int)screenSize.width;
+  int x = 0 > velocity_.x ? 1 : -1;
   for(int i = 0; i < 2; ++i) {
     CCSprite* sprite = [backgrounds_ objectAtIndex:i];
-    sprite.position = CGPointMake(screenSize.width / 2 + screenSize.width * i - current_.x - 1, screenSize.height / 2);
+    sprite.position = CGPointMake((screenSize.width / 2 - 3) + x * screenSize.width * i - current_.x, screenSize.height / 2);
   }
 }
 

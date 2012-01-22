@@ -7,6 +7,7 @@
 //
 
 #import "TitleLayer.h"
+#import "MainLayer.h"
 
 @implementation TitleLayer
 
@@ -18,18 +19,21 @@
     background.position = director.screenCenter;
     [self addChild:background];
     
-    id play = [CCMenuItemImage itemFromNormalImage:@"play.png" 
-                                     selectedImage:@"play_selected.png" 
-                                             block:^(id sender){
-                                             } ];
     id howto = [CCMenuItemImage itemFromNormalImage:@"howto.png" 
                                       selectedImage:@"howto_selected.png" 
                                               block:^(id sender){} ];
     id story = [CCMenuItemImage itemFromNormalImage:@"story.png" 
                                       selectedImage:@"story_selected.png" 
                                               block:^(id sender){} ];
+    id play = [CCMenuItemImage itemFromNormalImage:@"play.png" 
+                                     selectedImage:@"play_selected.png" 
+                                             block:^(id sender){
+                                               CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
+                                                                                                                 scene:[MainLayer nodeWithScene]];
+                                               [[CCDirector sharedDirector] pushScene:transition];
+                                             } ];
     
-    CCMenu* menu = [CCMenu menuWithItems:play, howto, story, nil];
+    CCMenu* menu = [CCMenu menuWithItems:howto, story, play, nil];
     [menu alignItemsVertically];
     menu.position = CGPointMake(120, 180);
     [self addChild:menu];

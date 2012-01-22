@@ -15,6 +15,7 @@
   CCLabelTTF* scoreLabel_;
   CCSprite* balloon_;
   CCSprite* rochka_;
+  CCLayer* mainLayer_;
   KWTimer* timer_;
 }
 
