@@ -1,5 +1,5 @@
 //
-//  TitleLayer.h
+//  MainLayer.h
 //  SantaRochka
 //
 //  Created by  on 2012/1/22.
@@ -8,6 +8,11 @@
 
 #import "heqet.h"
 
-@interface TitleLayer : KWLayer
+@interface MainLayer : KWLayer {
+  KWStateManager* stateManager_;
+}
 
+@end
+
+@interface ReadyState : KWState
 @end

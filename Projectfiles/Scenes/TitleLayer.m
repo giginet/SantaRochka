@@ -13,15 +13,15 @@
 - (id)init {
   self = [super init];
   if (self) {
-    CCDirector* director = [CCDirector sharedDirector];
-    //CCLayer* mainLayer = [[CCLayer alloc] init];
+    __block CCDirector* director = [CCDirector sharedDirector];
     CCSprite* background = [CCSprite spriteWithFile:@"title.png"];
     background.position = director.screenCenter;
     [self addChild:background];
     
     id play = [CCMenuItemImage itemFromNormalImage:@"play.png" 
                                      selectedImage:@"play_selected.png" 
-                                             block:^(id sender){} ];
+                                             block:^(id sender){
+                                             } ];
     id howto = [CCMenuItemImage itemFromNormalImage:@"howto.png" 
                                       selectedImage:@"howto_selected.png" 
                                               block:^(id sender){} ];
