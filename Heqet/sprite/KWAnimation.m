@@ -36,12 +36,16 @@
 
 + (id)spriteWithTextureAtlas:(CCTexture2D *)texture size:(CGSize)size delay:(float)delay {
   CGSize texSize = [texture contentSize];
-  int col = texSize.width/size.width;
-  int row = texSize.height/size.height;
+  int col = texSize.width / size.width;
+  int row = texSize.height / size.height;
   int frameCount = col * row;
   NSMutableArray* frames = [NSMutableArray arrayWithCapacity:frameCount];
   for(int i = 0; i < frameCount; ++i){
-    CCSpriteFrame* frame = [CCSpriteFrame frameWithTexture:texture rect:CGRectMake(i % col, i / col, texSize.width, texSize.height)];
+    CCSpriteFrame* frame = [CCSpriteFrame frameWithTexture:texture 
+                                                      rect:CGRectMake(size.width * (i % col),
+                                                                      size.height * (i % row),
+                                                                      size.width, 
+                                                                      size.height)];
     [frames addObject:frame];
   }
   return [KWAnimation spriteWithSpriteFrames:frames delay:delay];

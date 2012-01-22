@@ -9,10 +9,10 @@
 #import "heqet.h"
 
 @interface MainLayer : KWLayer {
-  KWStateManager* stateManager_;
+  BOOL isYes_;
+  CCSprite* balloon_;
+  CCSprite* rochka_;
+  KWTimer* timer_;
 }
 
-@end
-
-@interface ReadyState : KWState
 @end
