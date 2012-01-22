@@ -10,6 +10,29 @@
 
 @implementation KWAnimation
 
++ (id)animationWithTextureAtlas:(CCTexture2D *)texture size:(CGSize)size delay:(float)delay {
+  CGSize texSize = [texture contentSize];
+  int col = texSize.width / size.width;
+  int row = texSize.height / size.height;
+  int frameCount = col * row;
+  NSMutableArray* frames = [NSMutableArray arrayWithCapacity:frameCount];
+  for(int i = 0; i < frameCount; ++i){
+    CCSpriteFrame* frame = [CCSpriteFrame frameWithTexture:texture 
+                                                      rect:CGRectMake(size.width * (i % col),
+                                                                      size.height * (i % row),
+                                                                      size.width, 
+                                                                      size.height)];
+    [frames addObject:frame];
+  }
+  return [KWAnimation animationWithSpriteFrames:frames delay:delay];
+}
+
++ (id)animationWithSpriteFrames:(NSArray *)frames delay:(float)delay {
+  CCAnimation* animation = [CCAnimation animationWithFrames:frames delay:delay];
+  CCAnimate* animate = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
+  return animate;
+}
+
 + (id)spriteWithArray:(NSArray *)textures delay:(float)delay {
   NSMutableArray* frames = [NSMutableArray arrayWithCapacity:[textures count]];
   for(CCTexture2D* texture in textures){

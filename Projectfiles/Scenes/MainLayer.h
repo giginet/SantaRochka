@@ -9,7 +9,10 @@
 #import "heqet.h"
 
 @interface MainLayer : KWLayer {
+  int score_;
   BOOL isYes_;
+  BOOL isTouched_;
+  CCLabelTTF* scoreLabel_;
   CCSprite* balloon_;
   CCSprite* rochka_;
   KWTimer* timer_;

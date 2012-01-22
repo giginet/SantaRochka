@@ -56,7 +56,7 @@
 }
 
 - (void)scrollBackground:(ccTime)dt {
-  CGSize screenSize = [[CCDirector sharedDirector] screenSizeInPixels];
+  CGSize screenSize = [[CCDirector sharedDirector] screenSize];
   current_.x = (int)((current_.x - velocity_.x)) % (int)screenSize.width;
   for(int i = 0; i < 2; ++i) {
     CCSprite* sprite = [backgrounds_ objectAtIndex:i];
@@ -65,8 +65,8 @@
 }
 
 - (CCTexture2D*)generateTexture:(CCTexture2D *)texture {
-  CGSize original = texture.contentSizeInPixels;
-  CGSize screenSize = [[CCDirector sharedDirector] screenSizeInPixels];
+  CGSize original = texture.contentSize;
+  CGSize screenSize = [[CCDirector sharedDirector] screenSize];
   int col = ceil(screenSize.width / original.width);
   int row = ceil(screenSize.height / original.height);
   CCRenderTexture* rt = [CCRenderTexture renderTextureWithWidth:col * original.width

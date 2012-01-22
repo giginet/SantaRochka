@@ -17,4 +17,10 @@
 + (id)spriteWithTextureAtlas:(CCTexture2D *)texture size:(CGSize)size delay:(float)delay;
 + (id)spriteWithSpriteFrames:(NSArray*)frames delay:(float)delay;
 
++ (id)animationWithArray:(NSArray*)textures delay:(float)delay;
++ (id)animationWithFile:(NSString *)filename size:(CGSize)size delay:(float)delay;
++ (id)animationWithFiles:(NSArray*)files delay:(float)delay;
++ (id)animationWithTextureAtlas:(CCTexture2D *)texture size:(CGSize)size delay:(float)delay;
++ (id)animationWithSpriteFrames:(NSArray*)frames delay:(float)delay;
+
 @end
