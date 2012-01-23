@@ -127,7 +127,7 @@
     [scene addChild:rl];
     CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
                                                                       scene:scene];
-    [[CCDirector sharedDirector] pushScene:transition];
+    [[CCDirector sharedDirector] replaceScene:transition];
   }], nil];
   [jed runAction:seq];
 }

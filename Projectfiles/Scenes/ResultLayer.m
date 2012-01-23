@@ -86,7 +86,9 @@
     CCMenuItemImage* replay = [CCMenuItemImage itemFromNormalImage:@"replay.png" 
                                                      selectedImage:@"replay_selected.png" 
                                                              block:^(id sender){
-                                                               [director popScene];
+                                                               CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
+                                                                                                                                 scene:[MainLayer nodeWithScene]];
+                                                               [director replaceScene:transition];
                                                              }];
     CCMenuItemImage* title = [CCMenuItemImage itemFromNormalImage:@"title.png" 
                                                     selectedImage:@"title_selected.png" 
