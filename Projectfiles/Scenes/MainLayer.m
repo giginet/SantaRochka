@@ -186,10 +186,12 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
   if(!timer_.active) return NO;
-  if (isYes_ && !isTouched_) {
-    [timer_ pause];
-    isTouched_ = YES;
-    [self onPresent];
+  if (isYes_) {
+    if (!isTouched_){
+      [timer_ pause];
+      isTouched_ = YES;
+      [self onPresent];
+    }
   } else {
     [self onGameOver];
   }
