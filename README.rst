@@ -1,22 +1,12 @@
-================
-Heqet
-================
+===========================
+サンタラチカ ~ Santa Rochka ~
+===========================
 
 Description
 ---------------
-Heqet is an useful utility collection for game development.
-It extends Kobold2D.
+Kawaz, 秋のゲーム祭りで開発されたゲームをiPhone移植！
 
-Installation
----------------
+http://www.kawaz.org/flatpages/autumn_game_festa/negiyan/
 
-::
 
-    cd ~/Kobold2D/Kobold2D-x.y/__Kobold2D__/templates/project/
-    git clone git://github.com/giginet/Heqet.git _Kobold2D-With-Heqet-Template_
-    open ~/Kobold2D/Kobold2D-x.y/Kobold2D\ Project\ Starter.app
-
-Documentation
----------------
-Comming later.
-
+グラフィック、サウンド、企画 @negiyan11

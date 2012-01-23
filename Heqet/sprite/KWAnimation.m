@@ -29,7 +29,7 @@
 
 + (id)animationWithSpriteFrames:(NSArray *)frames delay:(float)delay {
   CCAnimation* animation = [CCAnimation animationWithFrames:frames delay:delay];
-  CCAnimate* animate = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
+  CCAnimate* animate = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:YES];
   return animate;
 }
 
@@ -77,7 +77,7 @@
 + (id)spriteWithSpriteFrames:(NSArray *)frames delay:(float)delay {
   CCSprite* sprite = [CCSprite spriteWithSpriteFrame:[frames objectAtIndex:0]];
   CCAnimation* animation = [CCAnimation animationWithFrames:frames delay:delay];
-  CCAnimate* animate = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
+  CCAnimate* animate = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:YES];
   CCSequence* seq = [CCSequence actions:animate, nil];
   [sprite runAction:[CCRepeatForever actionWithAction:seq]];
   return sprite;

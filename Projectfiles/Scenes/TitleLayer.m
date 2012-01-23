@@ -15,7 +15,7 @@
   self = [super init];
   if (self) {
     __block CCDirector* director = [CCDirector sharedDirector];
-    CCSprite* background = [CCSprite spriteWithFile:@"title.png"];
+    CCSprite* background = [CCSprite spriteWithFile:@"title_bg.png"];
     background.position = director.screenCenter;
     [self addChild:background];
     

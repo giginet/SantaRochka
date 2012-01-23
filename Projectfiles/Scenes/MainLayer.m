@@ -80,11 +80,11 @@
   ready.opacity = 0;
   [KWMusicManager sharedManager].bgVolume = 0.5;
   CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25], 
-                      [CCDelayTime actionWithDuration:2], 
-                      [CCFadeOut actionWithDuration:0.25],
-                      [CCCallFunc actionWithTarget:self selector:@selector(onGameStart)],
-                      nil];
-
+                     [CCDelayTime actionWithDuration:2], 
+                     [CCFadeOut actionWithDuration:0.25],
+                     [CCCallFunc actionWithTarget:self selector:@selector(onGameStart)],
+                     nil];
+  
   [ready runAction:seq];
   [mainLayer_ addChild:ready];
   
@@ -101,6 +101,7 @@
   [timer_ setOnCompleteListener:self selector:@selector(onCount)];
   [timer_ play];
   [KWMusicManager sharedManager].bgVolume = 1.0;
+  [self onCount];
 }
 
 - (void)onGameOver {
@@ -158,35 +159,34 @@
   [[KWMusicManager sharedManager] playEffect:@"se2.caf"];
   CCAnimate* anim = [KWAnimation animationWithTextureAtlas:[[CCTextureCache sharedTextureCache] addImage:@"rochka.png"]
                                                       size:CGSizeMake(112, 100) 
-                                                     delay:0.1];
+                                                     delay:0.10];
   __block KWTimer* timer = timer_;
-  __block MainLayer* layer = self;
+  __block CCLayer* layer = mainLayer_;
   CCSprite* love = [CCSprite spriteWithFile:@"love.png"];
   love.position = ccp(balloon_.contentSize.width / 2, 
                       balloon_.contentSize.height / 2);
   [balloon_ addChild:love];
-  id restart = [CCCallBlockN actionWithBlock:^(CCNode* node){
+  id shoot = [CCCallBlockN actionWithBlock:^(CCNode* node){
     CCSprite* present = [CCSprite spriteWithFile:@"present.png"];
     present.position = node.position;
-    CCDirector* director = [CCDirector sharedDirector];
     id suicide = [CCCallBlockN actionWithBlock:^(CCNode* node) {
       [layer removeChild:node cleanup:YES];
     }];
     [present runAction:[CCSequence actionOne:[CCMoveTo actionWithDuration:1.0 
-                                                                 position:CGPointMake(director.screenCenter.x, -100)] 
+                                                                 position:CGPointMake(0, -100)] 
                                          two:suicide]];
     [timer play];
     score_ += 100;
     [scoreLabel_ setString:[NSString stringWithFormat:@"%d", score_]];
     [layer addChild:present];
   }];
-  CCSequence* seq = [CCSequence actions:anim, restart, nil];
+  CCSequence* seq = [CCSequence actions:anim, shoot, nil];
   [rochka_ runAction:seq];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event {
   if(!timer_.active) return NO;
-  if (isYes_) {
+  if (isYes_ && !isTouched_) {
     [timer_ pause];
     isTouched_ = YES;
     [self onPresent];
