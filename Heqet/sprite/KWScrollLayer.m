@@ -57,7 +57,7 @@
 
 - (void)scrollBackground:(ccTime)dt {
   CGSize screenSize = [[CCDirector sharedDirector] screenSize];
-  current_.x = current_.x - velocity_.x;
+  current_.x = current_.x + velocity_.x;
   if (current_.x > screenSize.width) {
     current_.x = current_.x - screenSize.width;
   } else if(current_.x < -screenSize.width) {
@@ -66,7 +66,7 @@
   
   current_.y = current_.y - velocity_.y;
   if (current_.y > screenSize.height) {
-    current_.y = current_.y - screenSize.height;
+    current_.y = current_.y + screenSize.height;
   } else if(current_.y < -screenSize.height) {
     current_.y = screenSize.height + current_.y;
   }

@@ -34,7 +34,7 @@
     [[KWMusicManager sharedManager] preloadBg:@"afternoon_lesson.caf"];
     CCLayer* bgLayer = [[CCLayer alloc] init];
     KWScrollLayer* background = [KWScrollLayer layerWithFile:@"background.png"];
-    background.velocity = [KWVector vectorWithPoint:CGPointMake(1, 0)];
+    background.velocity = [KWVector vectorWithPoint:CGPointMake(1.5, 0)];
     [bgLayer addChild:background];
     
     [self addChild:bgLayer];
@@ -153,7 +153,7 @@
   [mainLayer_ addChild:balloon_];
   [[KWMusicManager sharedManager] playEffect:@"se1.caf"];
   isTouched_ = NO;
-  interval_ = MAX(0.5, interval_ * 0.99);
+  interval_ = MAX(0.6, interval_ - 0.015);
   [timer_ set:interval_];
 }
 
