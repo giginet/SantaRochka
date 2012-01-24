@@ -10,6 +10,7 @@
 
 @interface MainLayer : KWLayer {
   int score_;
+  double interval_;
   BOOL isYes_;
   BOOL isTouched_;
   CCLabelTTF* scoreLabel_;

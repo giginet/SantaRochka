@@ -94,7 +94,6 @@
   col_ = ceil(screenSize.width / original.width) + 1;
   row_ = ceil(screenSize.height / original.height) + 1;
   CCSpriteBatchNode* batch = [CCSpriteBatchNode batchNodeWithTexture:texture];
-  NSLog(@"%d, %d", col_, row_);
   for(int x = 0; x < col_; ++x) {
     for(int y = 0; y < row_; ++y) {
       CCSprite* sprite = [CCSprite spriteWithTexture:texture];
@@ -103,7 +102,6 @@
       sprite.position = ccp(original.width * x, 
                             original.height * y);
       [batch addChild:sprite];
-      NSLog(@"%f, %f", original.width * x, original.height * y);
     }
   }
   return batch;

@@ -102,6 +102,12 @@
     menu.position = ccp(380, 20);
     [self addChild:menu];
     
+    // high score
+    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
+    int highscore = [ud integerForKey:@"highscore"];
+    if (highscore < score) {
+      [ud setInteger:score forKey:@"highscore"];
+    }
   }
   return self;
 }

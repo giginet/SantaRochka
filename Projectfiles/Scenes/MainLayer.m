@@ -24,6 +24,7 @@
   self = [super init];
   if (self) {
     score_ = 0;
+    interval_ = 2;
     isYes_ = NO;
     isTouched_ = YES;
     mainLayer_ = [[CCLayer alloc] init];
@@ -55,7 +56,7 @@
     [mainLayer_ addChild:rochka_];
     [mainLayer_ addChild:bag];
     [self addChild:mainLayer_];
-    //[self addChild:frame];
+    [self addChild:frame];
     scoreLabel_ = [CCLabelTTF labelWithString:@"0" 
                                    dimensions:CGSizeMake(200, 50) 
                                     alignment:UITextAlignmentRight
@@ -96,7 +97,7 @@
 }
 
 - (void)onGameStart {
-  timer_ = [KWTimer timerWithMax:2];
+  timer_ = [KWTimer timerWithMax:interval_];
   timer_.looping = YES;
   [timer_ setOnCompleteListener:self selector:@selector(onCount)];
   [timer_ play];
@@ -152,6 +153,8 @@
   [mainLayer_ addChild:balloon_];
   [[KWMusicManager sharedManager] playEffect:@"se1.caf"];
   isTouched_ = NO;
+  interval_ = MAX(0.5, interval_ * 0.99);
+  [timer_ set:interval_];
 }
 
 -(void)onPresent {
