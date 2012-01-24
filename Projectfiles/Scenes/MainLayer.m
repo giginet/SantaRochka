@@ -55,7 +55,7 @@
     [mainLayer_ addChild:rochka_];
     [mainLayer_ addChild:bag];
     [self addChild:mainLayer_];
-    [self addChild:frame];
+    //[self addChild:frame];
     scoreLabel_ = [CCLabelTTF labelWithString:@"0" 
                                    dimensions:CGSizeMake(200, 50) 
                                     alignment:UITextAlignmentRight
