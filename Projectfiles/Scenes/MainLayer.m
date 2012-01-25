@@ -21,6 +21,7 @@
 @implementation MainLayer
 
 - (id)init {
+  self.backgroundColor = ccc4(44, 28, 127, 255);
   self = [super init];
   if (self) {
     score_ = 0;
@@ -43,9 +44,9 @@
     frame.position = CGPointMake(240, 165);
     
     
-    CCSprite* rud = [KWAnimation spriteWithTextureAtlas:[[CCTextureCache sharedTextureCache] addImage:@"rud.png"]
-                                                   size:CGSizeMake(90, 70) 
-                                                  delay:0.5];
+    CCSprite* rud = [CCSprite spriteWithAnimation:[CCAnimation animationWithTextureMap:[[CCTextureCache sharedTextureCache] addImage:@"rud.png"]
+                                                                                  size:CGSizeMake(90, 70) 
+                                                                                 delay:0.5]];
     rochka_ = [CCSprite spriteWithFile:@"rochka.png" rect:CGRectMake(0, 0, 112, 100)];
     
     CCSprite* bag = [CCSprite spriteWithFile:@"bag.png"];
@@ -120,9 +121,9 @@
 
 - (void)onGameOver {
   [timer_ stop];
-  CCSprite* jed = [KWAnimation spriteWithTextureAtlas:[[CCTextureCache sharedTextureCache] addImage:@"jed.png"] 
-                                                 size:CGSizeMake(100.5, 126) 
-                                                delay:0.3];
+  CCSprite* jed = [CCSprite spriteWithAnimation:[CCAnimation animationWithTextureMap:[[CCTextureCache sharedTextureCache] addImage:@"jed.png"] 
+                                                                                size:CGSizeMake(100.5, 126) 
+                                                                               delay:0.3]];
   float x = rochka_.position.x;
   jed.position = CGPointMake(x, [CCDirector sharedDirector].screenSize.height);
   [mainLayer_ addChild:jed];
@@ -173,7 +174,7 @@
 -(void)onPresent {
   [timer_ stop];
   [[KWMusicManager sharedManager] playEffect:@"se2.caf"];
-  CCAnimate* anim = [KWAnimation animationWithTextureAtlas:[[CCTextureCache sharedTextureCache] addImage:@"rochka.png"]
+  CCAnimation* anim = [CCAnimation animationWithTextureMap:[[CCTextureCache sharedTextureCache] addImage:@"rochka.png"]
                                                       size:CGSizeMake(112, 100) 
                                                      delay:0.10];
   __weak KWTimer* timer = timer_;
@@ -196,7 +197,10 @@
     [scoreLabel_ setString:[NSString stringWithFormat:@"%d", score_]];
     [layer addChild:present];
   }];
-  CCSequence* seq = [CCSequence actions:anim, shoot, nil];
+  CCSequence* seq = [CCSequence actions:[CCAnimate actionWithAnimation:anim 
+                                                  restoreOriginalFrame:YES], 
+                     shoot, 
+                     nil];
   [rochka_ runAction:seq];
 }
 

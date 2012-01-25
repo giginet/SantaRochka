@@ -13,7 +13,7 @@
 		07831F9314B23CC400C6FC96 /* KWLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F7E14B23CC400C6FC96 /* KWLayer.m */; };
 		07831F9414B23CC400C6FC96 /* KWState.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8014B23CC400C6FC96 /* KWState.m */; };
 		07831F9514B23CC400C6FC96 /* KWStateManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8214B23CC400C6FC96 /* KWStateManager.m */; };
-		07831F9614B23CC400C6FC96 /* KWAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8514B23CC400C6FC96 /* KWAnimation.m */; };
+		07831F9614B23CC400C6FC96 /* CCAnimationExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8514B23CC400C6FC96 /* CCAnimationExtension.m */; };
 		07831F9814B23CC400C6FC96 /* KWSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8A14B23CC400C6FC96 /* KWSingleton.m */; };
 		07831F9914B23CC400C6FC96 /* KWTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8C14B23CC400C6FC96 /* KWTimer.m */; };
 		07831F9A14B23CC400C6FC96 /* KWVector.m in Sources */ = {isa = PBXBuildFile; fileRef = 07831F8E14B23CC400C6FC96 /* KWVector.m */; };
@@ -136,8 +136,8 @@
 		07831F8014B23CC400C6FC96 /* KWState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWState.m; sourceTree = "<group>"; };
 		07831F8114B23CC400C6FC96 /* KWStateManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWStateManager.h; sourceTree = "<group>"; };
 		07831F8214B23CC400C6FC96 /* KWStateManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWStateManager.m; sourceTree = "<group>"; };
-		07831F8414B23CC400C6FC96 /* KWAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWAnimation.h; sourceTree = "<group>"; };
-		07831F8514B23CC400C6FC96 /* KWAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWAnimation.m; sourceTree = "<group>"; };
+		07831F8414B23CC400C6FC96 /* CCAnimationExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; path = CCAnimationExtension.h; sourceTree = "<group>"; };
+		07831F8514B23CC400C6FC96 /* CCAnimationExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CCAnimationExtension.m; sourceTree = "<group>"; };
 		07831F8914B23CC400C6FC96 /* KWSingleton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWSingleton.h; sourceTree = "<group>"; };
 		07831F8A14B23CC400C6FC96 /* KWSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWSingleton.m; sourceTree = "<group>"; };
 		07831F8B14B23CC400C6FC96 /* KWTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWTimer.h; sourceTree = "<group>"; };
@@ -367,8 +367,8 @@
 				07D6440614CB2E7B00B0910C /* KWTimerLabel.m */,
 				07831F9C14B2428D00C6FC96 /* CCSpriteExtension.h */,
 				07831F9D14B2428D00C6FC96 /* CCSpriteExtension.m */,
-				07831F8414B23CC400C6FC96 /* KWAnimation.h */,
-				07831F8514B23CC400C6FC96 /* KWAnimation.m */,
+				07831F8414B23CC400C6FC96 /* CCAnimationExtension.h */,
+				07831F8514B23CC400C6FC96 /* CCAnimationExtension.m */,
 				07D643FC14CB2DC900B0910C /* KWScrollLayer.h */,
 				07D643FD14CB2DC900B0910C /* KWScrollLayer.m */,
 			);
@@ -761,7 +761,7 @@
 				07831F9314B23CC400C6FC96 /* KWLayer.m in Sources */,
 				07831F9414B23CC400C6FC96 /* KWState.m in Sources */,
 				07831F9514B23CC400C6FC96 /* KWStateManager.m in Sources */,
-				07831F9614B23CC400C6FC96 /* KWAnimation.m in Sources */,
+				07831F9614B23CC400C6FC96 /* CCAnimationExtension.m in Sources */,
 				07831F9814B23CC400C6FC96 /* KWSingleton.m in Sources */,
 				07831F9914B23CC400C6FC96 /* KWTimer.m in Sources */,
 				07831F9A14B23CC400C6FC96 /* KWVector.m in Sources */,
