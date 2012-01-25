@@ -76,9 +76,21 @@
 }
 
 - (void)onReady {
+  CCDirector* director = [CCDirector sharedDirector];
   CCSprite* ready = [CCSprite spriteWithFile:@"ready.png"];
   ready.position = CGPointMake(190, 250);
   ready.opacity = 0;
+  CCParticleSystemQuad* particle = [CCParticleSystemQuad particleWithFile:@"particle.plist"];
+  particle.position = ccp(0, director.screenSize.height / 2);
+  __weak CCLayer* layer = mainLayer_;
+  [particle runAction:[CCSequence actions:
+                       [CCMoveTo actionWithDuration:5.0 position:CGPointMake(director.screenSize.width * 2,
+                                                                             director.screenSize.height * 2)],
+                       [CCCallBlockN actionWithBlock:^(CCNode* node){
+    [layer removeChild:node cleanup:YES];
+  }]
+                       
+                       ,nil]];
   [KWMusicManager sharedManager].bgVolume = 0.5;
   CCSequence* seq = [CCSequence actions:[CCFadeIn actionWithDuration:0.25], 
                      [CCDelayTime actionWithDuration:2], 
@@ -87,6 +99,7 @@
                      nil];
   
   [ready runAction:seq];
+  [mainLayer_ addChild:particle];
   [mainLayer_ addChild:ready];
   
   CCSprite* stage = [CCSprite spriteWithFile:@"stage1.png"];
@@ -163,8 +176,8 @@
   CCAnimate* anim = [KWAnimation animationWithTextureAtlas:[[CCTextureCache sharedTextureCache] addImage:@"rochka.png"]
                                                       size:CGSizeMake(112, 100) 
                                                      delay:0.10];
-  __block KWTimer* timer = timer_;
-  __block CCLayer* layer = mainLayer_;
+  __weak KWTimer* timer = timer_;
+  __weak CCLayer* layer = mainLayer_;
   CCSprite* love = [CCSprite spriteWithFile:@"love.png"];
   love.position = ccp(balloon_.contentSize.width / 2, 
                       balloon_.contentSize.height / 2);

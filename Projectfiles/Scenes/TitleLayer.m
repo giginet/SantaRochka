@@ -7,6 +7,7 @@
 //
 
 #import "TitleLayer.h"
+#import "HowtoLayer.h"
 #import "MainLayer.h"
 
 @implementation TitleLayer
@@ -19,12 +20,16 @@
     background.position = director.screenCenter;
     [self addChild:background];
     
-    id howto = [CCMenuItemImage itemFromNormalImage:@"howto.png" 
-                                      selectedImage:@"howto_selected.png" 
-                                              block:^(id sender){} ];
     id story = [CCMenuItemImage itemFromNormalImage:@"story.png" 
                                       selectedImage:@"story_selected.png" 
                                               block:^(id sender){} ];
+    id howto = [CCMenuItemImage itemFromNormalImage:@"howto.png" 
+                                      selectedImage:@"howto_selected.png" 
+                                              block:^(id sender){
+                                                CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
+                                                                                                                  scene:[HowtoLayer nodeWithScene]];
+                                                [[CCDirector sharedDirector] pushScene:transition];
+                                              } ];
     id play = [CCMenuItemImage itemFromNormalImage:@"play.png" 
                                      selectedImage:@"play_selected.png" 
                                              block:^(id sender){
@@ -32,15 +37,19 @@
                                                                                                                  scene:[MainLayer nodeWithScene]];
                                                [[CCDirector sharedDirector] pushScene:transition];
                                              } ];
-    
-    CCMenu* menu = [CCMenu menuWithItems:howto, story, play, nil];
+    CCMenu* menu = [CCMenu menuWithItems:story, howto, play, nil];
     [menu alignItemsVertically];
     menu.position = CGPointMake(120, 180);
     [self addChild:menu];
     CCSprite* frame = [CCSprite spriteWithFile:@"title_frame.png"];
+  
+    CCParticleSystemQuad* snow = [CCParticleSystemQuad particleWithFile:@"snow.plist"];
+    snow.position = ccp(240, 320);
+    [self addChild:snow];
     
     frame.position = director.screenCenter;
     [self addChild:frame];
+    
   }
   return self;
 }
