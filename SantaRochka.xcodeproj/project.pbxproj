@@ -95,6 +95,7 @@
 		07E8901B14CFDD19007036A4 /* particle.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E8901A14CFDD19007036A4 /* particle.plist */; };
 		07E8901D14CFEA39007036A4 /* snow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E8901C14CFEA39007036A4 /* snow.plist */; };
 		07E8902014CFEC04007036A4 /* HowtoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8901F14CFEC04007036A4 /* HowtoLayer.m */; };
+		07E8902214CFF16B007036A4 /* story.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902114CFF169007036A4 /* story.lua */; };
 		07EC8A5714C22F9700C388AD /* KWUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC8A5614C22F9700C388AD /* KWUtility.m */; };
 		07F20B8114C4EB59003D6237 /* tinymt32.c in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B7F14C4EB59003D6237 /* tinymt32.c */; };
 		07F20B8414C4EC07003D6237 /* KWRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B8314C4EC07003D6237 /* KWRandom.m */; };
@@ -222,8 +223,9 @@
 		07E8901114CDFE68007036A4 /* title.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = title.png; sourceTree = "<group>"; };
 		07E8901A14CFDD19007036A4 /* particle.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = particle.plist; sourceTree = "<group>"; };
 		07E8901C14CFEA39007036A4 /* snow.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = snow.plist; sourceTree = "<group>"; };
-		07E8901E14CFEC04007036A4 /* HowtoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; name = HowtoLayer.h; path = Scenes/HowtoLayer.h; sourceTree = "<group>"; };
+		07E8901E14CFEC04007036A4 /* HowtoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HowtoLayer.h; path = Scenes/HowtoLayer.h; sourceTree = "<group>"; };
 		07E8901F14CFEC04007036A4 /* HowtoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HowtoLayer.m; path = Scenes/HowtoLayer.m; sourceTree = "<group>"; };
+		07E8902114CFF169007036A4 /* story.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.lua; sourceTree = "<group>"; };
 		07EC8A5514C22F9700C388AD /* KWUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWUtility.h; sourceTree = "<group>"; };
 		07EC8A5614C22F9700C388AD /* KWUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWUtility.m; sourceTree = "<group>"; };
 		07F20B7F14C4EB59003D6237 /* tinymt32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tinymt32.c; sourceTree = "<group>"; };
@@ -565,6 +567,7 @@
 				07E7C52D14CBE62800D56117 /* audio */,
 				07E7C4BB14CBC7D900D56117 /* img */,
 				DCC1A39513A94F1A005BD75D /* config.lua */,
+				07E8902114CFF169007036A4 /* story.lua */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -712,6 +715,7 @@
 				07E8901514CDFE73007036A4 /* title.png in Resources */,
 				07E8901B14CFDD19007036A4 /* particle.plist in Resources */,
 				07E8901D14CFEA39007036A4 /* snow.plist in Resources */,
+				07E8902214CFF16B007036A4 /* story.lua in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

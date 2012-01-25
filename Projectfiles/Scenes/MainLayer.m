@@ -84,7 +84,7 @@
   particle.position = ccp(0, director.screenSize.height / 2);
   __weak CCLayer* layer = mainLayer_;
   [particle runAction:[CCSequence actions:
-                       [CCMoveTo actionWithDuration:5.0 position:CGPointMake(director.screenSize.width * 2,
+                       [CCMoveTo actionWithDuration:10.0 position:CGPointMake(director.screenSize.width * 2,
                                                                              director.screenSize.height * 2)],
                        [CCCallBlockN actionWithBlock:^(CCNode* node){
     [layer removeChild:node cleanup:YES];

@@ -49,7 +49,6 @@
     
     frame.position = director.screenCenter;
     [self addChild:frame];
-    
   }
   return self;
 }
