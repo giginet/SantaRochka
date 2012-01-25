@@ -42,7 +42,7 @@ local config =
 		EnableStatusBar = NO,
 
 		-- Orientation & Autorotation
-		DeviceOrientation = DeviceOrientation.LandscapeLeft,
+		DeviceOrientation = DeviceOrientation.LandscapeRight,
 		AutorotationType = Autorotation.UIViewController,
 		ShouldAutorotateToLandscapeOrientations = YES,
 		ShouldAutorotateToPortraitOrientations = NO,
