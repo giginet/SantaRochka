@@ -7,6 +7,7 @@
 //
 
 #import "TitleLayer.h"
+#import "StoryLayer.h"
 #import "HowtoLayer.h"
 #import "MainLayer.h"
 
@@ -22,7 +23,11 @@
     
     id story = [CCMenuItemImage itemFromNormalImage:@"story.png" 
                                       selectedImage:@"story_selected.png" 
-                                              block:^(id sender){} ];
+                                              block:^(id sender){
+                                                CCTransitionFade* transition = [CCTransitionFade transitionWithDuration:0.5f 
+                                                                                                                  scene:[StoryLayer nodeWithScene]];
+                                                [[CCDirector sharedDirector] pushScene:transition];
+                                              } ];
     id howto = [CCMenuItemImage itemFromNormalImage:@"howto.png" 
                                       selectedImage:@"howto_selected.png" 
                                               block:^(id sender){
@@ -49,6 +54,26 @@
     
     frame.position = director.screenCenter;
     [self addChild:frame];
+    
+    CCLabelTTF* highScoreLabel = [CCLabelTTF labelWithString:@"HIGH SCORE" 
+                                                  dimensions:CGSizeMake(100, 20) 
+                                                   alignment:UITextAlignmentRight 
+                                                    fontName:@"Marker Felt" 
+                                                    fontSize:16];
+    highScoreLabel.position = ccp(70, 300);
+    highScoreLabel.color = ccc3(128, 128, 128);
+    [self addChild:highScoreLabel];
+    
+    int score = [[NSUserDefaults standardUserDefaults] integerForKey:@"highscore"];
+    CCLabelTTF* highScore = [CCLabelTTF labelWithString:[NSString stringWithFormat:@"%d", score]
+                                             dimensions:CGSizeMake(100, 20) 
+                                              alignment:UITextAlignmentLeft
+                                               fontName:@"Marker Felt" 
+                                               fontSize:16];
+    highScore.position = ccp(180, 300);
+    highScore.color = ccc3(128, 128, 128);
+    
+    [self addChild:highScore];
   }
   return self;
 }

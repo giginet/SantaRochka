@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>centeredOrigin</key>
+	<false/>
+	<key>fileType</key>
+	<string>CocosBuilder</string>
+	<key>fileVersion</key>
+	<integer>1</integer>
+	<key>nodeGraph</key>
+	<dict>
+		<key>children</key>
+		<array/>
+		<key>class</key>
+		<string>CCNode</string>
+		<key>properties</key>
+		<dict>
+			<key>anchorPoint</key>
+			<array>
+				<real>0.0</real>
+				<real>0.0</real>
+			</array>
+			<key>contentSize</key>
+			<array>
+				<real>0.0</real>
+				<real>0.0</real>
+			</array>
+			<key>customClass</key>
+			<string></string>
+			<key>isExpanded</key>
+			<true/>
+			<key>isRelativeAnchorPoint</key>
+			<true/>
+			<key>lockedScaleRatio</key>
+			<true/>
+			<key>memberVarAssignmentName</key>
+			<string></string>
+			<key>memberVarAssignmentType</key>
+			<integer>0</integer>
+			<key>position</key>
+			<array>
+				<real>0.0</real>
+				<real>0.0</real>
+			</array>
+			<key>rotation</key>
+			<real>0.0</real>
+			<key>scaleX</key>
+			<real>1</real>
+			<key>scaleY</key>
+			<real>1</real>
+			<key>tag</key>
+			<integer>-1</integer>
+			<key>visible</key>
+			<true/>
+			<key>zOrder</key>
+			<integer>0</integer>
+		</dict>
+	</dict>
+	<key>stageHeight</key>
+	<integer>320</integer>
+	<key>stageWidth</key>
+	<integer>480</integer>
+</dict>
+</plist>

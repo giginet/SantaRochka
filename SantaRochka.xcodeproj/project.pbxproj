@@ -96,6 +96,13 @@
 		07E8901D14CFEA39007036A4 /* snow.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E8901C14CFEA39007036A4 /* snow.plist */; };
 		07E8902014CFEC04007036A4 /* HowtoLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8901F14CFEC04007036A4 /* HowtoLayer.m */; };
 		07E8902214CFF16B007036A4 /* story.lua in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902114CFF169007036A4 /* story.lua */; };
+		07E8902514CFF6A8007036A4 /* StoryLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 07E8902414CFF6A8007036A4 /* StoryLayer.m */; };
+		07E8902A14CFF812007036A4 /* jed_story-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902614CFF80C007036A4 /* jed_story-hd.png */; };
+		07E8902B14CFF812007036A4 /* jed_story.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902714CFF80E007036A4 /* jed_story.png */; };
+		07E8902C14CFF812007036A4 /* story_frame-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902814CFF80F007036A4 /* story_frame-hd.png */; };
+		07E8902D14CFF812007036A4 /* story_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902914CFF811007036A4 /* story_frame.png */; };
+		07E8903014CFF921007036A4 /* background_story-hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902E14CFF91D007036A4 /* background_story-hd.jpg */; };
+		07E8903114CFF921007036A4 /* background_story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902F14CFF91F007036A4 /* background_story.jpg */; };
 		07EC8A5714C22F9700C388AD /* KWUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC8A5614C22F9700C388AD /* KWUtility.m */; };
 		07F20B8114C4EB59003D6237 /* tinymt32.c in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B7F14C4EB59003D6237 /* tinymt32.c */; };
 		07F20B8414C4EC07003D6237 /* KWRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B8314C4EC07003D6237 /* KWRandom.m */; };
@@ -226,6 +233,14 @@
 		07E8901E14CFEC04007036A4 /* HowtoLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HowtoLayer.h; path = Scenes/HowtoLayer.h; sourceTree = "<group>"; };
 		07E8901F14CFEC04007036A4 /* HowtoLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = HowtoLayer.m; path = Scenes/HowtoLayer.m; sourceTree = "<group>"; };
 		07E8902114CFF169007036A4 /* story.lua */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = story.lua; sourceTree = "<group>"; };
+		07E8902314CFF6A8007036A4 /* StoryLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryLayer.h; path = Scenes/StoryLayer.h; sourceTree = "<group>"; };
+		07E8902414CFF6A8007036A4 /* StoryLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = StoryLayer.m; path = Scenes/StoryLayer.m; sourceTree = "<group>"; };
+		07E8902614CFF80C007036A4 /* jed_story-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "jed_story-hd.png"; sourceTree = "<group>"; };
+		07E8902714CFF80E007036A4 /* jed_story.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jed_story.png; sourceTree = "<group>"; };
+		07E8902814CFF80F007036A4 /* story_frame-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "story_frame-hd.png"; sourceTree = "<group>"; };
+		07E8902914CFF811007036A4 /* story_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = story_frame.png; sourceTree = "<group>"; };
+		07E8902E14CFF91D007036A4 /* background_story-hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_story-hd.jpg"; sourceTree = "<group>"; };
+		07E8902F14CFF91F007036A4 /* background_story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_story.jpg; sourceTree = "<group>"; };
 		07EC8A5514C22F9700C388AD /* KWUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWUtility.h; sourceTree = "<group>"; };
 		07EC8A5614C22F9700C388AD /* KWUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWUtility.m; sourceTree = "<group>"; };
 		07F20B7F14C4EB59003D6237 /* tinymt32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tinymt32.c; sourceTree = "<group>"; };
@@ -384,6 +399,12 @@
 		07E7C4BB14CBC7D900D56117 /* img */ = {
 			isa = PBXGroup;
 			children = (
+				07E8902E14CFF91D007036A4 /* background_story-hd.jpg */,
+				07E8902F14CFF91F007036A4 /* background_story.jpg */,
+				07E8902614CFF80C007036A4 /* jed_story-hd.png */,
+				07E8902714CFF80E007036A4 /* jed_story.png */,
+				07E8902814CFF80F007036A4 /* story_frame-hd.png */,
+				07E8902914CFF811007036A4 /* story_frame.png */,
 				07E7C55114CC38CB00D56117 /* love-hd.png */,
 				07E7C55214CC38CD00D56117 /* love.png */,
 				07E7C54914CC37F800D56117 /* result_frame-hd.png */,
@@ -459,6 +480,8 @@
 				07E7C54714CC34B700D56117 /* ResultLayer.m */,
 				07E8901E14CFEC04007036A4 /* HowtoLayer.h */,
 				07E8901F14CFEC04007036A4 /* HowtoLayer.m */,
+				07E8902314CFF6A8007036A4 /* StoryLayer.h */,
+				07E8902414CFF6A8007036A4 /* StoryLayer.m */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -716,6 +739,12 @@
 				07E8901B14CFDD19007036A4 /* particle.plist in Resources */,
 				07E8901D14CFEA39007036A4 /* snow.plist in Resources */,
 				07E8902214CFF16B007036A4 /* story.lua in Resources */,
+				07E8902A14CFF812007036A4 /* jed_story-hd.png in Resources */,
+				07E8902B14CFF812007036A4 /* jed_story.png in Resources */,
+				07E8902C14CFF812007036A4 /* story_frame-hd.png in Resources */,
+				07E8902D14CFF812007036A4 /* story_frame.png in Resources */,
+				07E8903014CFF921007036A4 /* background_story-hd.jpg in Resources */,
+				07E8903114CFF921007036A4 /* background_story.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -751,6 +780,7 @@
 				07E7C50A14CBD24C00D56117 /* MainLayer.m in Sources */,
 				07E7C54814CC34B700D56117 /* ResultLayer.m in Sources */,
 				07E8902014CFEC04007036A4 /* HowtoLayer.m in Sources */,
+				07E8902514CFF6A8007036A4 /* StoryLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
