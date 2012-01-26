@@ -55,6 +55,11 @@
     rochka_.position = CGPointMake(390, 175);
     rud.position = CGPointMake(45, 10);
     bag.position = CGPointMake(70, 15);
+    
+    CCParticleSystemQuad* shot = [CCParticleSystemQuad particleWithFile:@"shot.plist"];
+    shot.position = ccp(75, 10);
+    [rochka_ addChild:shot];
+    
     [rochka_ addChild:rud];
     [rochka_ addChild:bag];
     [mainLayer_ addChild:rochka_];
@@ -228,7 +233,11 @@
   CGSize size = rochka_.contentSize;
   if (input.accelerometerAvailable && !onGameOver_) {
     KKAcceleration* ac = input.acceleration;
-    KWVector* v = [KWVector vectorWithPoint:CGPointMake(ac.y * 3, -ac.x * 3)];
+    double x = ac.y;
+    double y = -ac.x;
+    if (x < 0.1 && x > -0.1) x = 0;
+    if (y < 0.1 && y > -0.1) y = 0;
+    KWVector* v = [KWVector vectorWithPoint:CGPointMake(x * 3, y * 3)];
     v = [v max:3];
     rochka_.position = ccpAdd(rochka_.position, v.point);
     if (rochka_.position.x < 100 + size.width / 2) {
