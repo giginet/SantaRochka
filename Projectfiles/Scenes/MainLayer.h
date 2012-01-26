@@ -13,9 +13,11 @@
   double interval_;
   BOOL isYes_;
   BOOL isTouched_;
+  BOOL onGameOver_;
   CCLabelTTF* scoreLabel_;
   CCSprite* balloon_;
   CCSprite* rochka_;
+  KWScrollLayer* background_;
   CCLayer* mainLayer_;
   KWTimer* timer_;
 }

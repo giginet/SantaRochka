@@ -9,6 +9,7 @@
 #import "KWMusicManager.h"
 #import "MainLayer.h"
 #import "ResultLayer.h"
+#define BACKGROUND_SPEED 1.5
 
 @interface MainLayer()
 - (void)onReady;
@@ -28,15 +29,16 @@
     interval_ = 2;
     isYes_ = NO;
     isTouched_ = YES;
+    onGameOver_ = NO;
     mainLayer_ = [[CCLayer alloc] init];
     for(NSString* bgm in [NSArray arrayWithObjects:@"se1.caf", @"se2.caf", @"se3.caf", nil]){
       [[KWMusicManager sharedManager] preloadEffect:bgm];
     }
     [[KWMusicManager sharedManager] preloadBg:@"afternoon_lesson.caf"];
     CCLayer* bgLayer = [[CCLayer alloc] init];
-    KWScrollLayer* background = [KWScrollLayer layerWithFile:@"background.png"];
-    background.velocity = [KWVector vectorWithPoint:CGPointMake(1.5, 0)];
-    [bgLayer addChild:background];
+    background_ = [KWScrollLayer layerWithFile:@"background.png"];
+    background_.velocity = [KWVector vectorWithPoint:CGPointMake(BACKGROUND_SPEED, 0)];
+    [bgLayer addChild:background_];
     
     [self addChild:bgLayer];
     
@@ -51,11 +53,11 @@
     
     CCSprite* bag = [CCSprite spriteWithFile:@"bag.png"];
     rochka_.position = CGPointMake(390, 175);
-    rud.position = CGPointMake(380, 140);
-    bag.position = CGPointMake(405, 145);
-    [mainLayer_ addChild:rud];
+    rud.position = CGPointMake(45, 10);
+    bag.position = CGPointMake(70, 15);
+    [rochka_ addChild:rud];
+    [rochka_ addChild:bag];
     [mainLayer_ addChild:rochka_];
-    [mainLayer_ addChild:bag];
     [self addChild:mainLayer_];
     [self addChild:frame];
     scoreLabel_ = [CCLabelTTF labelWithString:@"0" 
@@ -66,6 +68,7 @@
     scoreLabel_.position = ccp(330, 7);
     scoreLabel_.color = ccc3(20, 20, 20);
     [self addChild:scoreLabel_];
+    [KKInput sharedInput].accelerometerActive = YES;
     self.isTouchEnabled = YES;
   }
   return self;
@@ -121,6 +124,7 @@
 
 - (void)onGameOver {
   [timer_ stop];
+  onGameOver_ = YES;
   CCSprite* jed = [CCSprite spriteWithAnimation:[CCAnimation animationWithTextureMap:[[CCTextureCache sharedTextureCache] addImage:@"jed.png"] 
                                                                                 size:CGSizeMake(100.5, 126) 
                                                                                delay:0.3]];
@@ -152,7 +156,7 @@
     [self onGameOver];
     return;
   }
-  [mainLayer_ removeChild:balloon_ cleanup:YES];
+  [rochka_ removeChild:balloon_ cleanup:YES];
   KWRandom* rnd = [KWRandom random];
   int index = [rnd nextIntWithRange:NSMakeRange(0, 6)];
   isYes_ = index < 3;
@@ -163,8 +167,8 @@
     balloon_ = [CCSprite spriteWithFile:@"n_no.png" 
                                    rect:CGRectMake(98 * (index - 3), 0, 98, 87)];
   }
-  balloon_.position = CGPointMake(300, 230);
-  [mainLayer_ addChild:balloon_];
+  balloon_.position = CGPointMake(-20, 100);
+  [rochka_ addChild:balloon_];
   [[KWMusicManager sharedManager] playEffect:@"se1.caf"];
   isTouched_ = NO;
   interval_ = MAX(0.6, interval_ - 0.015);
@@ -216,6 +220,36 @@
     [self onGameOver];
   }
   return YES;
+}
+
+- (void)update:(ccTime)dt {
+  KKInput* input = [KKInput sharedInput];
+  CGSize screenSize = [CCDirector sharedDirector].screenSize;
+  CGSize size = rochka_.contentSize;
+  if (input.accelerometerAvailable && !onGameOver_) {
+    KKAcceleration* ac = input.acceleration;
+    KWVector* v = [KWVector vectorWithPoint:CGPointMake(ac.y * 3, -ac.x * 3)];
+    v = [v max:3];
+    rochka_.position = ccpAdd(rochka_.position, v.point);
+    if (rochka_.position.x < 100 + size.width / 2) {
+      rochka_.position = ccp(100 + size.width / 2, rochka_.position.y);
+      if (v.x < -BACKGROUND_SPEED) {
+        background_.velocity = [KWVector vectorWithPoint:CGPointMake(-v.x, 0)];
+      } else {
+        background_.velocity = [KWVector vectorWithPoint:CGPointMake(BACKGROUND_SPEED, 0)];
+      }
+    } else {
+      background_.velocity = [KWVector vectorWithPoint:CGPointMake(BACKGROUND_SPEED, 0)];
+    }
+    if (rochka_.position.x > screenSize.width - size.width / 2) {
+      rochka_.position = ccp(screenSize.width - size.width / 2, rochka_.position.y);
+    }
+    if (rochka_.position.y < size.height / 2) {
+      rochka_.position = ccp(rochka_.position.x, size.height / 2);
+    } else if (rochka_.position.y > screenSize.height - size.height / 2) {
+      rochka_.position = ccp(rochka_.position.x, screenSize.height - size.height / 2);
+    }
+  }
 }
 
 @end
