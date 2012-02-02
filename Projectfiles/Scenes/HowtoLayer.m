@@ -24,7 +24,7 @@
     
     CCDirector* director = [CCDirector sharedDirector];
     guide_ = [CCSprite spriteWithFile:@"guide0.png"];
-    guide_.position = director.screenCenter;
+    guide_.position = ccp(director.screenCenter.x, director.screenCenter.y + 30);
     [self addChild:guide_];
     
     CCSprite* frame = [CCSprite spriteWithFile:@"main_frame.png"];

@@ -237,7 +237,7 @@
     double y = -ac.x;
     if (x < 0.1 && x > -0.1) x = 0;
     if (y < 0.1 && y > -0.1) y = 0;
-    KWVector* v = [KWVector vectorWithPoint:CGPointMake(x * 3, y * 3)];
+    KWVector* v = [KWVector vectorWithPoint:CGPointMake(x * 3, y * 0)];
     v = [v max:3];
     rochka_.position = ccpAdd(rochka_.position, v.point);
     if (rochka_.position.x < 100 + size.width / 2) {
@@ -252,11 +252,6 @@
     }
     if (rochka_.position.x > screenSize.width - size.width / 2) {
       rochka_.position = ccp(screenSize.width - size.width / 2, rochka_.position.y);
-    }
-    if (rochka_.position.y < size.height / 2) {
-      rochka_.position = ccp(rochka_.position.x, size.height / 2);
-    } else if (rochka_.position.y > screenSize.height - size.height / 2) {
-      rochka_.position = ccp(rochka_.position.x, screenSize.height - size.height / 2);
     }
   }
 }
