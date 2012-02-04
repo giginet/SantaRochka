@@ -99,11 +99,15 @@
 		07E8902D14CFF812007036A4 /* story_frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902914CFF811007036A4 /* story_frame.png */; };
 		07E8903014CFF921007036A4 /* background_story-hd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902E14CFF91D007036A4 /* background_story-hd.jpg */; };
 		07E8903114CFF921007036A4 /* background_story.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 07E8902F14CFF91F007036A4 /* background_story.jpg */; };
-		07E8903414D0CC29007036A4 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8903214D0CC29007036A4 /* Icon.png */; };
-		07E8903514D0CC29007036A4 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07E8903314D0CC29007036A4 /* Icon@2x.png */; };
 		07E8903914D0D87F007036A4 /* shot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E8903814D0D87E007036A4 /* shot.plist */; };
 		07EC221814DD5669002C08BC /* guide0-hd.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC221614DD5668002C08BC /* guide0-hd.png */; };
 		07EC221914DD5669002C08BC /* guide0.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC221714DD5668002C08BC /* guide0.png */; };
+		07EC223514DD66B2002C08BC /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC222D14DD66B2002C08BC /* Icon-72.png */; };
+		07EC223614DD66B2002C08BC /* Icon-Small-50.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC222E14DD66B2002C08BC /* Icon-Small-50.png */; };
+		07EC223714DD66B2002C08BC /* Icon-Small.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC222F14DD66B2002C08BC /* Icon-Small.png */; };
+		07EC223814DD66B2002C08BC /* Icon-Small@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC223014DD66B2002C08BC /* Icon-Small@2x.png */; };
+		07EC223914DD66B2002C08BC /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC223114DD66B2002C08BC /* Icon.png */; };
+		07EC223A14DD66B2002C08BC /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07EC223214DD66B2002C08BC /* Icon@2x.png */; };
 		07EC8A5714C22F9700C388AD /* KWUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 07EC8A5614C22F9700C388AD /* KWUtility.m */; };
 		07F20B8114C4EB59003D6237 /* tinymt32.c in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B7F14C4EB59003D6237 /* tinymt32.c */; };
 		07F20B8414C4EC07003D6237 /* KWRandom.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F20B8314C4EC07003D6237 /* KWRandom.m */; };
@@ -238,11 +242,15 @@
 		07E8902914CFF811007036A4 /* story_frame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = story_frame.png; sourceTree = "<group>"; };
 		07E8902E14CFF91D007036A4 /* background_story-hd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background_story-hd.jpg"; sourceTree = "<group>"; };
 		07E8902F14CFF91F007036A4 /* background_story.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background_story.jpg; sourceTree = "<group>"; };
-		07E8903214D0CC29007036A4 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = Resources/Icon.png; sourceTree = "<group>"; };
-		07E8903314D0CC29007036A4 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		07E8903814D0D87E007036A4 /* shot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = shot.plist; sourceTree = "<group>"; };
 		07EC221614DD5668002C08BC /* guide0-hd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "guide0-hd.png"; sourceTree = "<group>"; };
 		07EC221714DD5668002C08BC /* guide0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = guide0.png; sourceTree = "<group>"; };
+		07EC222D14DD66B2002C08BC /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Projectfiles-iOS/Resources/Icon-72.png"; sourceTree = "<group>"; };
+		07EC222E14DD66B2002C08BC /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Projectfiles-iOS/Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
+		07EC222F14DD66B2002C08BC /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Projectfiles-iOS/Resources/Icon-Small.png"; sourceTree = "<group>"; };
+		07EC223014DD66B2002C08BC /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Projectfiles-iOS/Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
+		07EC223114DD66B2002C08BC /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = "Projectfiles-iOS/Resources/Icon.png"; sourceTree = "<group>"; };
+		07EC223214DD66B2002C08BC /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "Projectfiles-iOS/Resources/Icon@2x.png"; sourceTree = "<group>"; };
 		07EC8A5514C22F9700C388AD /* KWUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KWUtility.h; sourceTree = "<group>"; };
 		07EC8A5614C22F9700C388AD /* KWUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KWUtility.m; sourceTree = "<group>"; };
 		07F20B7F14C4EB59003D6237 /* tinymt32.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tinymt32.c; sourceTree = "<group>"; };
@@ -264,13 +272,8 @@
 		DC9C33E713B5024400931BF2 /* BuildSettings-Debug-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Debug-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E813B5024400931BF2 /* BuildSettings-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Mac.xcconfig"; sourceTree = "<group>"; };
 		DC9C33E913B5024400931BF2 /* BuildSettings-Release-Mac.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "BuildSettings-Release-Mac.xcconfig"; sourceTree = "<group>"; };
-		DCC1A0E313A94ED5005BD75D /* SantaRochka-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SantaRochka-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		DCC1A0F913A94ED5005BD75D /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
+		DCC1A0E313A94ED5005BD75D /* SantaRochka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SantaRochka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCC1A0FB13A94ED5005BD75D /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = fps_images.png; path = Resources/fps_images.png; sourceTree = "<group>"; };
-		DCC1A0FD13A94ED5005BD75D /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-72.png"; path = "Resources/Icon-72.png"; sourceTree = "<group>"; };
-		DCC1A0FF13A94ED5005BD75D /* Icon-Small-50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small-50.png"; path = "Resources/Icon-Small-50.png"; sourceTree = "<group>"; };
-		DCC1A10113A94ED5005BD75D /* Icon-Small.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small.png"; path = "Resources/Icon-Small.png"; sourceTree = "<group>"; };
-		DCC1A10313A94ED5005BD75D /* Icon-Small@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon-Small@2x.png"; path = "Resources/Icon-Small@2x.png"; sourceTree = "<group>"; };
 		DCC1A10913A94ED5005BD75D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Resources/Info.plist; sourceTree = "<group>"; };
 		DCC1A10A13A94ED5005BD75D /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/iTunesArtwork; sourceTree = "<group>"; };
 		DCC1A38D13A94F1A005BD75D /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -501,6 +504,12 @@
 		DCC1A0D613A94EC0005BD75D = {
 			isa = PBXGroup;
 			children = (
+				07EC222D14DD66B2002C08BC /* Icon-72.png */,
+				07EC222E14DD66B2002C08BC /* Icon-Small-50.png */,
+				07EC222F14DD66B2002C08BC /* Icon-Small.png */,
+				07EC223014DD66B2002C08BC /* Icon-Small@2x.png */,
+				07EC223114DD66B2002C08BC /* Icon.png */,
+				07EC223214DD66B2002C08BC /* Icon@2x.png */,
 				DCC1A38C13A94F1A005BD75D /* Projectfiles */,
 				DCC1A0F713A94ED5005BD75D /* Projectfiles-iOS */,
 				DCFA90ED13B4F6A0009DD35A /* BuildSettings */,
@@ -512,7 +521,7 @@
 		DCC1A0E413A94ED5005BD75D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DCC1A0E313A94ED5005BD75D /* SantaRochka-iOS.app */,
+				DCC1A0E313A94ED5005BD75D /* SantaRochka.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -536,14 +545,7 @@
 		DCC1A0F813A94ED5005BD75D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				07E8903214D0CC29007036A4 /* Icon.png */,
-				07E8903314D0CC29007036A4 /* Icon@2x.png */,
-				DCC1A0F913A94ED5005BD75D /* Default.png */,
 				DCC1A0FB13A94ED5005BD75D /* fps_images.png */,
-				DCC1A0FD13A94ED5005BD75D /* Icon-72.png */,
-				DCC1A0FF13A94ED5005BD75D /* Icon-Small-50.png */,
-				DCC1A10113A94ED5005BD75D /* Icon-Small.png */,
-				DCC1A10313A94ED5005BD75D /* Icon-Small@2x.png */,
 				DCC1A10913A94ED5005BD75D /* Info.plist */,
 				DCC1A10A13A94ED5005BD75D /* iTunesArtwork */,
 			);
@@ -604,9 +606,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DCC1A0E213A94ED5005BD75D /* SantaRochka-iOS */ = {
+		DCC1A0E213A94ED5005BD75D /* SantaRochka */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "SantaRochka-iOS" */;
+			buildConfigurationList = DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "SantaRochka" */;
 			buildPhases = (
 				DCC1A0DF13A94ED5005BD75D /* Sources */,
 				DCC1A0E013A94ED5005BD75D /* Frameworks */,
@@ -616,9 +618,9 @@
 			);
 			dependencies = (
 			);
-			name = "SantaRochka-iOS";
+			name = SantaRochka;
 			productName = "Hello-World-iOS";
-			productReference = DCC1A0E313A94ED5005BD75D /* SantaRochka-iOS.app */;
+			productReference = DCC1A0E313A94ED5005BD75D /* SantaRochka.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -642,7 +644,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DCC1A0E213A94ED5005BD75D /* SantaRochka-iOS */,
+				DCC1A0E213A94ED5005BD75D /* SantaRochka */,
 			);
 		};
 /* End PBXProject section */
@@ -724,11 +726,15 @@
 				07E8902D14CFF812007036A4 /* story_frame.png in Resources */,
 				07E8903014CFF921007036A4 /* background_story-hd.jpg in Resources */,
 				07E8903114CFF921007036A4 /* background_story.jpg in Resources */,
-				07E8903414D0CC29007036A4 /* Icon.png in Resources */,
-				07E8903514D0CC29007036A4 /* Icon@2x.png in Resources */,
 				07E8903914D0D87F007036A4 /* shot.plist in Resources */,
 				07EC221814DD5669002C08BC /* guide0-hd.png in Resources */,
 				07EC221914DD5669002C08BC /* guide0.png in Resources */,
+				07EC223514DD66B2002C08BC /* Icon-72.png in Resources */,
+				07EC223614DD66B2002C08BC /* Icon-Small-50.png in Resources */,
+				07EC223714DD66B2002C08BC /* Icon-Small.png in Resources */,
+				07EC223814DD66B2002C08BC /* Icon-Small@2x.png in Resources */,
+				07EC223914DD66B2002C08BC /* Icon.png in Resources */,
+				07EC223A14DD66B2002C08BC /* Icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,7 +829,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "SantaRochka-iOS" */ = {
+		DCC1A25313A94ED7005BD75D /* Build configuration list for PBXNativeTarget "SantaRochka" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCC1A25413A94ED7005BD75D /* Debug */,

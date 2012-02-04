@@ -14,8 +14,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-               BuildableName = "SantaRochka-iOS.app"
-               BlueprintName = "SantaRochka-iOS"
+               BuildableName = "SantaRochka.app"
+               BlueprintName = "SantaRochka"
                ReferencedContainer = "container:SantaRochka.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -32,8 +32,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "SantaRochka-iOS.app"
-            BlueprintName = "SantaRochka-iOS"
+            BuildableName = "SantaRochka.app"
+            BlueprintName = "SantaRochka"
             ReferencedContainer = "container:SantaRochka.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -50,8 +50,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "SantaRochka-iOS.app"
-            BlueprintName = "SantaRochka-iOS"
+            BuildableName = "SantaRochka.app"
+            BlueprintName = "SantaRochka"
             ReferencedContainer = "container:SantaRochka.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCC1A0E213A94ED5005BD75D"
-            BuildableName = "SantaRochka-iOS.app"
-            BlueprintName = "SantaRochka-iOS"
+            BuildableName = "SantaRochka.app"
+            BlueprintName = "SantaRochka"
             ReferencedContainer = "container:SantaRochka.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
